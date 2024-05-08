@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis for Reviews</title>
+    <style>
+        #exampleReviews li {
+            cursor: pointer;
+            color: blue;
+        }
+        #exampleReviews li:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        function fillReview(text) {
+            document.getElementById('userInput').value = text;
+        }
+    </script>
+</head>
+<body>
+    <h1>Review Sentiment Analysis Tool</h1>
+    <p>Enter a review in the box below to see if it's positive or negative.</p>
+    
+    <form action="/analyze" method="post">
+        <label for="userInput">Enter review text to analyze:</label><br>
+        <textarea id="userInput" name="userInput" rows="4" cols="50" placeholder="Enter review here..."></textarea><br>
+        <input type="submit" value="Analyze Sentiment">
+    </form>
+
+    {% if result is not none %}
+    <h2>Analysis Result:</h2>
+    <p>Sentiment: {{ result }}</p>
+    {% else %}
+    <p>No sentiment analysis result available. Please submit a review for analysis.</p>
+    {% endif %}
+
+    <h3>Example Reviews:</h3>
+    <ul id="exampleReviews">
+        <li onclick="fillReview('This product was great! It worked exactly as described and exceeded my expectations.')">"This product was great! It worked exactly as described and exceeded my expectations."</li>
+        <li onclick="fillReview('I am not happy with this purchase. The product did not perform as advertised and was a waste of money.')">"I am not happy with this purchase. The product did not perform as advertised and was a waste of money."</li>
+        <li onclick="fillReview('The customer service was excellent, and the issue was resolved quickly. Highly recommend!')">"The customer service was excellent, and the issue was resolved quickly. Highly recommend!"</li>
+        <li onclick="fillReview('Very disappointed with the service. It took much longer than promised, and the staff was rude.')">"Very disappointed with the service. It took much longer than promised, and the staff was rude."</li>
+    </ul>
+</body>
+</html>
