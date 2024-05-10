@@ -13,7 +13,7 @@ vectorizer = joblib.load(vectorizer_path)
 print("Model last modified:", os.path.getmtime(model_path))
 print("Vectorizer last modified:", os.path.getmtime(vectorizer_path))
 
-# Optionally, perform a test prediction to confirm their functionality
+
 def clean_text(text):
     import re
     text = re.sub(r'[^a-zA-Z\s]', '', text, re.I|re.A)

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sentiment Analysis for Reviews</title>
+    <title>Customer Feedback Analysis System</title>
     <style>
         #exampleReviews li {
             cursor: pointer;
@@ -11,6 +11,19 @@
         }
         #exampleReviews li:hover {
             text-decoration: underline;
+        }
+        .image-container {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            width: 100%; /* Adjust based on your preference */
+            max-width: 600px; /* Adjust based on your preference */
+        }
+        .image-caption {
+            text-align: center;
+            margin-top: 5px;
+            font-style: italic;
         }
     </style>
     <script>
@@ -20,7 +33,7 @@
     </script>
 </head>
 <body>
-    <h1>Review Sentiment Analysis Tool</h1>
+    <h1>Customer Feedback Analysis System</h1>
     <p>Enter a review in the box below to see if it's positive or negative.</p>
     
     <form action="/analyze" method="post">
@@ -43,5 +56,22 @@
         <li onclick="fillReview('The customer service was excellent, and the issue was resolved quickly. Highly recommend!')">"The customer service was excellent, and the issue was resolved quickly. Highly recommend!"</li>
         <li onclick="fillReview('Very disappointed with the service. It took much longer than promised, and the staff was rude.')">"Very disappointed with the service. It took much longer than promised, and the staff was rude."</li>
     </ul>
+
+    <div class="image-container">
+        <img src="../static/Confusion.png" alt="Confusion Matrix">
+        <div class="image-caption">Confusion Matrix: This visualization reflects the accuracy of the model's sentiment classification, depicting true and false predictions.</div>
+    </div>
+    <div class="image-container">
+        <img src="../static/Percision.png" alt="Precision-Recall Curve">
+        <div class="image-caption">Precision-Recall Curve: Displays the trade-off between precision and recall, crucial for evaluating model performance at various thresholds.</div>
+    </div>
+    <div class="image-container">
+        <img src="../static/Ratings.png" alt="Distribution of Ratings">
+        <div class="image-caption">Distribution of Ratings: Overview of review rating frequencies. This graph is based on an aggregate of sources, including detailed review data from consumer-focused businesses like Starbucks and various restaurants.</div>
+    </div>
+    <div class="image-container">
+        <img src="../static/ROC.png" alt="ROC Curve">
+        <div class="image-caption">ROC Curve: Illustrates the diagnostic ability of the classifier, helping determine the optimal threshold for maximizing true positive rate while minimizing false positives.</div>
+    </div>
 </body>
 </html>
