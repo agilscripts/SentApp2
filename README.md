@@ -21,7 +21,7 @@ pip install Flask joblib pandas numpy scikit-learn imbalanced-learn
 ## Project Structure
 
 This project includes the following files and directories:
-- `main.py`: The main Python script that runs the Flask application.
+- `app.py`: The main Python script that runs the Flask application.
 - `model.pkl`: The pre-trained sentiment analysis model.
 - `vectorizer.pkl`: The TF-IDF vectorizer used to convert text data into a format that can be analyzed by the model.
 - `templates/`: Directory containing the HTML templates for the web interface.
@@ -38,7 +38,7 @@ This project includes the following files and directories:
 To run the application, execute the following command from the root directory of the project:
 
 ```bash
-python main.py
+python app.py
 ```
 
 After running the command, the Flask server will start, and the application will be available at `http://127.0.0.1:5000/` in your web browser.
